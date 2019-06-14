@@ -1,11 +1,6 @@
 <?php
-
-//controlador
-if (isset($_GET['on'])) 
-	echo on();
-else 
-	echo off();
-
+class Bombilla
+{
 function on(){
 		return '
 		<a href ="?off=1"> 
@@ -20,5 +15,16 @@ function off(){
 		</a>';
 
 }
+	
+}
+
+//controlador
+$b = new Bombilla();
+
+if (isset($_GET['on'])) 
+	echo $b->on();
+else 
+	echo $b->off();
+
 
 ?>
